@@ -1,48 +1,66 @@
 Link to Google sheet with analysis results: https://docs.google.com/spreadsheets/d/1qkP7ShM2KKEdVXgpIuqkvvAyCChXoVpVluuikhIXpnI/edit?usp=sharing
 
-Country Query
-Unique Event Analysis Query
+--Country Query
+
+--Unique Event Analysis Query
+
 This repository contains an SQL query designed to analyze the first occurrences of specific events by users across different countries, ultimately ranking these countries based on the total number of unique events. This analytical approach is invaluable for understanding user behavior patterns, assessing the impact of marketing strategies, and identifying high-engagement regions.
 
-Overview
+--Overview
+
 The query is structured into a series of Common Table Expressions (CTEs) to progressively filter and analyze event data. It focuses on identifying the first instance of key events (e.g., page views, item views, cart additions, checkout initiations, and purchases) for each user in each country, counting these unique events, and then ranking countries based on these counts. This method offers insights into initial user engagement and the geographical distribution of active users.
 
-Query Structure
-UniqueEventCounts: Identifies the first occurrence of specified event types for each user in each country, leveraging the ROW_NUMBER() function to enumerate events.
-FilteredUniqueEvents: Filters to retain only the initial occurrence of each event for users in each country, aggregating these counts by country and event type.
-CountryRankings: Ranks countries based on the total number of unique events, using the aggregated data from FilteredUniqueEvents.
+--Query Structure
+
+-UniqueEventCounts: Identifies the first occurrence of specified event types for each user in each country, leveraging the ROW_NUMBER() function to enumerate events.
+-FilteredUniqueEvents: Filters to retain only the initial occurrence of each event for users in each country, aggregating these counts by country and event type.
+-CountryRankings: Ranks countries based on the total number of unique events, using the aggregated data from FilteredUniqueEvents.
 The final SELECT statement combines data from FilteredUniqueEvents and CountryRankings to display the event counts along with the country rankings for the top 3 countries.
 
-Features
-Event Specific Analysis: Focuses on crucial user interaction events, allowing for targeted insights into user engagement.
-Unique User Interactions: Identifies the first occurrence of each event type for individual users, highlighting initial engagement.
-Geographical Insights: Ranks countries based on engagement levels, offering a global view of user activity.
-Optimization Opportunities: Data can inform targeted marketing strategies, product placement, and user experience improvements.
-Usage
-This query is tailored for datasets containing user event information, typical of e-commerce platforms, content providers, or any digital service tracking user interactions. To adapt this query to your database, ensure your event logs table is structured similarly to tc-da-1.turing_data_analytics.raw_events and adjust field names as necessary.
+--Features
 
-Contributing
+-Event Specific Analysis: Focuses on crucial user interaction events, allowing for targeted insights into user engagement.
+-Unique User Interactions: Identifies the first occurrence of each event type for individual users, highlighting initial engagement.
+-Geographical Insights: Ranks countries based on engagement levels, offering a global view of user activity.
+-Optimization Opportunities: Data can inform targeted marketing strategies, product placement, and user experience improvements.
+
+--Usage
+
+This query is tailored for datasets containing user event information, typical of e-commerce platforms, content providers, or any digital service tracking user interactions.
+To adapt this query to your database, ensure your event logs table is structured similarly to tc-da-1.turing_data_analytics.raw_events and adjust field names as necessary.
+
+--Contributing
+
 Contributions to improve or expand the query are welcome. Suggestions for additional event types, optimization techniques, or alternative analytical perspectives are particularly appreciated. Please submit your contributions via pull requests.
 
-Device Query
-Event Funnel Analysis Query
-This repository hosts an SQL query designed to perform a funnel analysis on user events across different categories. By focusing on the sequence of user interactions from page views to purchases, this query aids in identifying how users progress through a conversion funnel within each event category.
+--Device Query
 
-Overview
+--Event Funnel Analysis Query
+
+This repository hosts an SQL query designed to perform a funnel analysis on user events across different categories.
+By focusing on the sequence of user interactions from page views to purchases, this query aids in identifying how users progress through a conversion funnel within each event category.
+
+--Overview
+
 The query utilizes Common Table Expressions (CTEs) to filter, categorize, and order events based on their occurrence in the user journey. It aims to uncover the first occurrence of specific events by user within each category, providing insights into user behavior and the effectiveness of the conversion funnel.
 
-Query Structure
-UniqueEvents: Identifies the initial occurrence of specified event types (e.g., page view, view item, add to cart, begin checkout, purchase) for each user within each category, using the ROW_NUMBER() function to facilitate this.
-FilteredUniqueEvents: Filters the results of the UniqueEvents CTE to include only the first occurrence of each event type for users in each category, aggregating these into counts.
-CategoryFunnel: Assigns a numeric order to each event based on its typical position in a conversion funnel and organizes the count of unique event occurrences accordingly.
+--Query Structure
+
+-UniqueEvents: Identifies the initial occurrence of specified event types (e.g., page view, view item, add to cart, begin checkout, purchase) for each user within each category, using the ROW_NUMBER() function to facilitate this.
+-FilteredUniqueEvents: Filters the results of the UniqueEvents CTE to include only the first occurrence of each event type for users in each category, aggregating these into counts.
+-CategoryFunnel: Assigns a numeric order to each event based on its typical position in a conversion funnel and organizes the count of unique event occurrences accordingly.
 The final SELECT statement presents the analysis results, ordering them by category and the sequence of the funnel to illustrate the progression from initial interest to purchase.
 
-Features
-Focused Analysis: Concentrates on crucial interaction events, offering targeted insights into the funnel progression.
-Category Specific: Allows for the examination of behavior within distinct event categories, accommodating varied user journeys.
-Funnel Visualization: Supports the creation of funnel visualizations by providing ordered event data, which can be crucial for marketing analysis and strategy development.
-Usage
+--Features
+
+-Focused Analysis: Concentrates on crucial interaction events, offering targeted insights into the funnel progression.
+-Category Specific: Allows for the examination of behavior within distinct event categories, accommodating varied user journeys.
+-Funnel Visualization: Supports the creation of funnel visualizations by providing ordered event data, which can be crucial for marketing analysis and strategy development.
+
+--Usage
+
 To adapt this query to your data, ensure your event logs table (referenced as tc-da-1.turing_data_analytics.raw_events) has a similar structure with fields for category, event name, user ID, and event timestamp. You may need to adjust table names and column names according to your dataset.
 
-Contributing
+--Contributing
+
 Your contributions are welcomed! If you have suggestions for improving this query, such as adding more event types, optimizing performance, or including additional analytics, please feel free to fork this repository and submit a pull request with your changes.
