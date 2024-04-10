@@ -1,20 +1,20 @@
 Link to Gooogle sheet with further analysis: https://docs.google.com/spreadsheets/d/1tQlJBsWv3go29UrwJffdr2yeGoxK3IG8LV3c3sLgYa4/edit?usp=sharing
 
-# Subscription Analysis Query
+-- Subscription Analysis Query
 
 This repository contains an SQL query designed to analyze subscription retention over a six-week period. The analysis is crucial for understanding user behavior and retention trends, offering insights that can help tailor marketing strategies and improve service offerings.
 
-## Overview
+-- Overview
 
 The query operates on a dataset of subscription start and end dates, tracking how many users begin a subscription in a given week and remain subscribed in the weeks following. This longitudinal analysis provides a window into the effectiveness of engagement and retention strategies.
 
-## Features
+-- Features
 
 - **Weekly Cohort Analysis**: Users who start a subscription in the same week are grouped into cohorts for analysis.
 - **Retention Tracking**: For each cohort, the query calculates how many users remain subscribed for up to six weeks after their initial subscription date.
 - **Flexible Time Frames**: Though focused on a six-week period, the query can be easily modified to examine longer or shorter durations.
 
-## Data Structure
+-- Data Structure
 
 The query expects a `subscriptions` table with at least the following columns:
 
@@ -22,11 +22,11 @@ The query expects a `subscriptions` table with at least the following columns:
 - `subscription_start`: The start date of the subscription.
 - `subscription_end`: The end date of the subscription (can be `NULL` if the subscription is ongoing).
 
-## Usage
+-- Usage
 
 To use this query, ensure your database contains a `subscriptions` table structured as described above. Replace `turing_data_analytics.subscriptions` with the appropriate table reference in your database.
 
-## Contributing
+-- Contributing
 
 Contributions are welcome! If you have suggestions for improving this query or have developed additional analyses based on this structure, please feel free to open an issue or pull request.
 
