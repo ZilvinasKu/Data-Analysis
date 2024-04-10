@@ -1,0 +1,43 @@
+Predicting Coronary Heart Disease Risk
+
+--Project Overview
+
+This project utilizes logistic regression to predict the 10-year risk of developing coronary heart disease (CHD) based on the Framingham Heart Study dataset.
+Through meticulous data preprocessing, model training, and evaluation, we've identified key predictors of CHD risk and adjusted our model to prioritize the detection of high-risk individuals.
+
+--Installation
+
+To set up your environment to run this code, you will need Python and several Python packages.
+
+--Prerequisites
+
+Python 3.x
+pandas
+numpy
+scikit-learn
+
+
+--The dataset underwent thorough preprocessing, including:
+
+-Handling missing values by imputing with median values for continuous variables and mode values for categorical variables.
+-Standardizing features using StandardScaler to ensure a consistent scale across all variables.
+
+--Model Training
+
+A logistic regression model was chosen for its efficiency in handling binary outcomes, like CHD risk.
+The data was split into an 80/20 train-test ratio, and the model was trained using standardized features to optimize performance.
+
+--Model Evaluation and Adjustment
+
+Initial model performance was evaluated using accuracy, precision, recall, and F1 score.
+To decrease the incidence of false negatives, the decision threshold was adjusted, improving the model's sensitivity to detecting CHD risk.
+
+--Key Findings
+
+Age, systolic blood pressure (sysBP), cigarettes per day, male gender, and glucose levels were identified as significant predictors of CHD risk.
+Adjusting the decision threshold enhanced the model's ability to identify individuals at risk, prioritizing sensitivity over specificity.
+
+--Conclusion
+
+This project demonstrates the potential of logistic regression in predicting CHD risk, providing valuable insights into the relationship between various predictors and CHD.
+Future work could explore more complex models or incorporate additional predictors to further enhance predictive performance.
