@@ -1,21 +1,33 @@
-Monthly Sales Performance Analysis SQL Query
-This repository hosts an advanced SQL query designed for analyzing monthly sales performance across various regions, incorporating aspects such as order volumes, customer interactions, sales personnel engagement, and the impact of tax rates on overall sales. Tailored for the AdventureWorks database, this query serves as a powerful tool for data analysts and business intelligence professionals seeking to derive actionable insights from sales data.
+--Monthly Sales Performance Analysis SQL Query
 
-Overview
-The query leverages Common Table Expressions (CTEs) to organize and simplify the analysis of complex sales data. It extracts detailed information on monthly sales activities, calculates maximum tax rates by region, and evaluates the tax landscape across different provinces or states within each country or region. The outcome is a comprehensive report that highlights key performance metrics, including the total number of orders, unique customers, active salespersons, and the aggregated sales amount including taxes.
+This repository hosts an advanced SQL query designed for analyzing monthly sales performance across various regions,
+incorporating aspects such as order volumes, customer interactions, sales personnel engagement, and the impact of tax rates on overall sales.
+Tailored for the AdventureWorks database, this query serves as a powerful tool for data analysts and business intelligence professionals seeking to derive actionable insights from sales data.
 
-Key Features
-Monthly Sales Data Extraction: Aggregates sales information by month and region, providing a clear view of sales trends over time.
-Tax Rate Analysis: Calculates the maximum tax rate applicable within each region, offering insights into the fiscal environment's impact on sales.
-Province and State Tax Distribution: Assesses the tax distribution across provinces or states, aiding in understanding regional tax compliance and its effects on sales.
-Performance Metrics: Includes aggregated sales metrics and advanced analytics like sales ranking by region, cumulative sales sums, average tax rates, and the proportion of taxed provinces.
-Query Structure
-MonthlySalesCTE: Extracts and aggregates monthly sales data, including the number of orders and customers, sales personnel involvement, and total sales with tax.
-MaxTaxRates: Calculates the maximum tax rate for each state or province within a country or region.
-ProvincesWithTax: Counts the total number of provinces or states and those with applicable taxes for each country or region.
-Main Query: Combines the results from the above CTEs to generate a detailed report on monthly sales performance, including additional analytics on sales rankings, cumulative sums, and tax metrics.
-Usage
-This query is designed for the AdventureWorks database but can be adapted to similar sales data structures with minimal modifications. Users are encouraged to adjust the query parameters and structure as needed to fit their specific data models and analytical requirements.
+--Overview
 
-Contributing
+The query leverages Common Table Expressions (CTEs) to organize and simplify the analysis of complex sales data.
+It extracts detailed information on monthly sales activities, calculates maximum tax rates by region, and evaluates the tax landscape across different provinces or states within each country or region.
+The outcome is a comprehensive report that highlights key performance metrics, including the total number of orders, unique customers, active salespersons, and the aggregated sales amount including taxes.
+
+--Key Features
+
+-Monthly Sales Data Extraction: Aggregates sales information by month and region, providing a clear view of sales trends over time.
+-Tax Rate Analysis: Calculates the maximum tax rate applicable within each region, offering insights into the fiscal environment's impact on sales.
+-Province and State Tax Distribution: Assesses the tax distribution across provinces or states, aiding in understanding regional tax compliance and its effects on sales.
+-Performance Metrics: Includes aggregated sales metrics and advanced analytics like sales ranking by region, cumulative sales sums, average tax rates, and the proportion of taxed provinces.
+
+--Query Structure
+
+-MonthlySalesCTE: Extracts and aggregates monthly sales data, including the number of orders and customers, sales personnel involvement, and total sales with tax.
+-MaxTaxRates: Calculates the maximum tax rate for each state or province within a country or region.
+-ProvincesWithTax: Counts the total number of provinces or states and those with applicable taxes for each country or region.
+-Main Query: Combines the results from the above CTEs to generate a detailed report on monthly sales performance, including additional analytics on sales rankings, cumulative sums, and tax metrics.
+
+--Usage
+This query is designed for the AdventureWorks database but can be adapted to similar sales data structures with minimal modifications.
+Users are encouraged to adjust the query parameters and structure as needed to fit their specific data models and analytical requirements.
+
+--Contributing
+
 Contributions to enhance or extend the functionality of this SQL query are welcome. Whether it's optimizing performance, adding new features, or improving documentation, your input is valuable. Please feel free to fork the repository, make your changes, and submit a pull request.
