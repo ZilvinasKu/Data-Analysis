@@ -37,4 +37,5 @@ It's particularly useful for businesses looking to understand their customer bas
 Ensure that your dataset matches the expected structure and adjust the table reference in the FROM clause (tc-da-1.turing_data_analytics.rfm) to point to your dataset.
 
 Output
-The final output of the query is a table listing each customer's CustomerID, Country, RFM scores (Recency, Frequency, MonetaryValue), and their assigned RFM_Segment, providing a clear view of different customer segments for targeted analysis and action.
+The final output of the query is a table listing each customer's CustomerID, Country, RFM scores (Recency, Frequency, MonetaryValue), and their assigned RFM_Segment,
+providing a clear view of different customer segments for targeted analysis and action.
