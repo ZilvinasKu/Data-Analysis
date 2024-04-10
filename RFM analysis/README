@@ -1,41 +1,45 @@
 Tableau Public vizzie regarding the data: https://public.tableau.com/views/RFManalysis_17108650429590/Dashboard1?:language=en-GB&:sid=&:display_count=n&:origin=viz_share_link
 RFM analysis results: https://docs.google.com/document/d/1gBoIBAyttWHRGDOTe07MaB28d44Wnw2QPUY_BNlTtkA/edit?usp=sharing
 
-RFM Analysis SQL Query
+--RFM Analysis SQL Query
+
 This repository contains a comprehensive SQL query designed to perform RFM (Recency, Frequency, Monetary Value) analysis on a dataset of transactions.
 The purpose of RFM analysis is to segment customers based on their transaction history to identify valuable customer groups for targeted marketing strategies.
 
-Overview
+--Overview
+
 The query is structured in several steps to transform raw transaction data into insightful customer segments.
 It uses Google BigQuery syntax and is tailored for datasets containing transaction records with fields for CustomerID, Country, InvoiceDate, InvoiceNo, Quantity, and UnitPrice.
 
-Steps Involved
-Initial Data Preparation: Filters transactions based on specific criteria:
+--Steps Involved
 
-Date range between '2010-12-01' and '2011-12-01'.
-Presence of CustomerID.
-Positive Quantity values to exclude returns or corrections.
-RFM Metrics Calculation: Computes the RFM metrics for each customer:
+-Initial Data Preparation: Filters transactions based on specific criteria:
+-Date range between '2010-12-01' and '2011-12-01'.
+-Presence of CustomerID.
+-Positive Quantity values to exclude returns or corrections.
+-RFM Metrics Calculation: Computes the RFM metrics for each customer:
 
-Recency: Days since last purchase.
-Frequency: Number of unique transactions.
-Monetary Value: Total spend per customer.
-Quartile Thresholds Calculation: Determines quartile thresholds for each RFM metric to facilitate scoring.
+--Recency: Days since last purchase.
+--Frequency: Number of unique transactions.
+--Monetary Value: Total spend per customer.
+--Quartile Thresholds Calculation: Determines quartile thresholds for each RFM metric to facilitate scoring.
 
-RFM Scoring: Assigns scores to each RFM metric based on quartile thresholds:
+--RFM Scoring: Assigns scores to each RFM metric based on quartile thresholds:
 
-Recency scores are inversely related; less recency results in higher scores.
-Frequency and Monetary Value scores are directly related; higher values result in higher scores.
-FM Score Calculation: Averages Frequency and Monetary scores for further segmentation.
+-Recency scores are inversely related; less recency results in higher scores.
+-Frequency and Monetary Value scores are directly related; higher values result in higher scores.
+-FM Score Calculation: Averages Frequency and Monetary scores for further segmentation.
 
-Customer Segmentation: Segments customers based on R and FM scores using predefined logic to classify customers into segments such as 'Champions', 'Loyal Customers', 'Potential Loyalists', etc.
+--Customer Segmentation: Segments customers based on R and FM scores using predefined logic to classify customers into segments such as 'Champions', 'Loyal Customers', 'Potential Loyalists', etc.
 
-Usage
+--Usage
+
 This query can be utilized in any SQL environment that supports window functions and the specific syntax used (e.g., Google BigQuery).
 It's particularly useful for businesses looking to understand their customer base and tailor marketing efforts based on customer value and engagement.
 
-Ensure that your dataset matches the expected structure and adjust the table reference in the FROM clause (tc-da-1.turing_data_analytics.rfm) to point to your dataset.
+-Ensure that your dataset matches the expected structure and adjust the table reference in the FROM clause (tc-da-1.turing_data_analytics.rfm) to point to your dataset.
 
-Output
+--Output
+
 The final output of the query is a table listing each customer's CustomerID, Country, RFM scores (Recency, Frequency, MonetaryValue), and their assigned RFM_Segment,
 providing a clear view of different customer segments for targeted analysis and action.
