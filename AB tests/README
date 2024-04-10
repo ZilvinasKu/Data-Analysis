@@ -1,20 +1,25 @@
 Link to Google Sheet with statistical analysis: https://docs.google.com/spreadsheets/d/1kdNLgqjw7fsEj3JDwKhRRn-QKtmjmsQAthObC3bQ4p4/edit?usp=sharing
-Campaign Performance Analysis Query
-This repository contains an SQL query designed for analyzing the performance of specific marketing campaigns, focusing on unique clicks estimation and ad impressions. It specifically targets campaigns related to "New Year" and "Black Friday" events, providing insights into their effectiveness.
 
-Overview
-The query combines data from raw_events and adsense_monthly tables to estimate unique clicks for each campaign and compare these against the number of ad impressions. By filtering for page view events and specific campaign names, it offers a refined view of user engagement and the reach of each campaign.
+##Campaign Performance Analysis Query
+This repository contains an SQL query designed for analyzing the performance of specific marketing campaigns, focusing on unique clicks estimation and ad impressions.
+It specifically targets campaigns related to "New Year" and "Black Friday" events, providing insights into their effectiveness.
 
-Query Structure
+##Overview
+The query combines data from raw_events and adsense_monthly tables to estimate unique clicks for each campaign and compare these against the number of ad impressions.
+By filtering for page view events and specific campaign names, it offers a refined view of user engagement and the reach of each campaign.
+
+##Query Structure
 EstimatedClicks: A Common Table Expression (CTE) that estimates unique clicks for "New Year" and "Black Friday" campaigns by counting unique users who viewed pages related to these campaigns.
 Main SELECT Statement: Retrieves detailed campaign performance data, including the month of the campaign, campaign name, number of impressions, and the estimated unique clicks.
-Features
-Focused Analysis: Targets specific high-interest campaigns, allowing for detailed performance analysis.
+
+##Features
+
+##Focused Analysis: Targets specific high-interest campaigns, allowing for detailed performance analysis.
 Unique Clicks Estimation: Provides an estimation of user engagement by counting unique page views attributed to each campaign.
 Exclusion Criteria: Demonstrates how to exclude specific data points for more accurate analysis, such as removing outliers or incorrect data entries.
-Usage
-To use this query with your dataset, ensure your database has tables similar to tc-da-1.turing_data_analytics.raw_events and tc-da-1.turing_data_analytics.adsense_monthly, with fields for campaign names, user IDs, event names, and impressions. Adjust the table and column names as necessary to match your schema.
+
+##Usage
+To use this query with your dataset, ensure your database has tables similar to tc-da-1.turing_data_analytics.raw_events and tc-da-1.turing_data_analytics.adsense_monthly,
+with fields for campaign names, user IDs, event names, and impressions. Adjust the table and column names as necessary to match your schema.
 
 This query can be modified to include additional campaigns or to focus on different metrics of interest, such as conversion rates or click-through rates, by incorporating relevant data from your database.
-
-Also, this is a link that shows the query results after running statistical tests: https://docs.google.com/spreadsheets/d/1bT0ahGQffXP_0lu2sdqAT0Iif36cu-EJDWI2ixwC9x4/edit?usp=sharing
